@@ -30,7 +30,7 @@ function seleccionarMascotaJugador(){
     seccionSeleccionarJugador.style.display = 'none';
     //display para que se vea los ataques al seleccionar el jugador
     let seccionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
-    seccionSeleccionarAtaque.style.display = 'block';
+    seccionSeleccionarAtaque.style.display = 'flex';
 
     let inputHipodoge = document.getElementById('hipodoge');
     let inputCapipepo = document.getElementById('capipepo');
@@ -132,26 +132,30 @@ function revisarVidas(){
     } 
 }
 
-
-
 //Mensaje para ver quien gano cada ronda
 function crearMensaje(resultado){
-    let sectioMensaje = document.getElementById('mensajes');
+    let sectioMensaje = document.getElementById('resultado');
+    let ataqueDelJugador = document.getElementById('ataques-del-jugador');
+    let ataqueDelEnemigo = document.getElementById('ataques-del-enemigo');
 
-    let parrafo = document.createElement('p');
-    parrafo.innerText = 'Tu mascota ataco con '+ataqueJugador+', el enemigo ataco con '+ataqueEnemigo+' - '+ resultado;
+    let nuevoAtaqueDelJugador = document.createElement('p');
+    let nuevoAtaqueDelEnemigo = document.createElement('p');
+
+    sectioMensaje.innerHTML=resultado;
+    nuevoAtaqueDelJugador.innerHTML=ataqueJugador;
+    nuevoAtaqueDelEnemigo.innerHTML=ataqueEnemigo;
+
     //colocamos el parrafo creado dentro del mensaje
-    sectioMensaje.appendChild(parrafo); 
+    ataqueDelJugador.appendChild(nuevoAtaqueDelJugador);
+    ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
+  
 }
 
 //Mensaje final de juego
 function crearMensajeFinal(resultadoFinal){
-    let sectioMensaje = document.getElementById('mensajes');
+    let sectioMensaje = document.getElementById('resultado');
 
-    let parrafo = document.createElement('p');
-    parrafo.innerText = resultadoFinal
-    //colocamos el parrafo creado dentro del mensaje
-    sectioMensaje.appendChild(parrafo); 
+    sectioMensaje.innerText = resultadoFinal;
 
     //PARA AGREGAR EL DISABLE A LOS PODERES UNA VES TERMINADO
     //Llamamos otra ves a las variables de los botones porque arriba esta en un scope local

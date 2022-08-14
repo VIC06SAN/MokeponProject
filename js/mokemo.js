@@ -19,7 +19,6 @@ const sectioMensaje = document.getElementById('resultado');
 const ataqueDelJugador = document.getElementById('ataques-del-jugador');
 const ataqueDelEnemigo = document.getElementById('ataques-del-enemigo');
 
-
 //INICIO DEL COMBATE (variables)
 let victoriasJugador = 0;
 let victoriasEnemigo = 0;
@@ -288,4 +287,5 @@ function crearMensajeFinal(resultadoFinal){
 function reiniciarJuego(){
     location.reload();
 }
+
 

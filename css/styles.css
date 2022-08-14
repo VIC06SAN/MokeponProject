@@ -72,7 +72,7 @@ input:checked + label{
     padding: 10px;
     box-sizing: border-box;
     border-color: transparent;
-    width: 200px;
+    width: 80px;
     color: white;
     font-family: 'Poppins', sans-serif;
 }
